@@ -200,3 +200,33 @@ button, .text-link, .primary-link, .side-tab { min-height: 44px; }
 @media (hover: none) {
   .text-link:hover, .primary-link:hover, button:hover { background: var(--maroon); }
 }
+
+
+/* User-supplied Ganesha artwork: responsive devotional feature, not a background watermark. */
+.ganesha-artwork {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 270px);
+  margin: 0 auto 22px;
+  line-height: 0;
+  border: 1px solid rgba(177, 138, 78, .34);
+  box-shadow: 0 12px 34px rgba(91, 55, 25, .12);
+  background: #f3c78e;
+}
+.ganesha-artwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+@media (max-width: 650px) {
+  .ganesha-artwork {
+    width: min(58vw, 205px);
+    margin-bottom: 19px;
+    box-shadow: 0 8px 22px rgba(91, 55, 25, .10);
+  }
+  .hero { padding-top: 32px; }
+}
+@media (max-width: 360px) {
+  .ganesha-artwork { width: min(55vw, 185px); }
+}
