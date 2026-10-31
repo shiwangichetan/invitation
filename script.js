@@ -1,7 +1,7 @@
 /* Add your Supabase Project URL and publishable/anon key below.
    Never paste a service_role or secret key into this file. */
-const SUPABASE_URL = "PASTE_YOUR_SUPABASE_PROJECT_URL_HERE";
-const SUPABASE_ANON_KEY = "PASTE_YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY_HERE";
+const SUPABASE_URL = "https://xjtehcygcozgzhajecvl.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_rMd1m4pm3NGw7PzOLszzHQ_ABz3kk4_";
 
 const countdownTarget = new Date("2026-12-02T00:00:00+05:30").getTime();
 
