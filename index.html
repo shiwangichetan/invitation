@@ -11,20 +11,36 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Josefin+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Josefin+Slab:wght@400;500;600&family=Montserrat:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style-additions.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="invite-gate" id="invite-gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="invite-gate" id="invite-gate" role="dialog"
+     aria-modal="true" aria-labelledby="gate-title">
   <div class="gate-envelope">
-    <div class="gate-crest" aria-hidden="true">ॐ</div>
-    <p class="gate-kicker">WITH THE BLESSINGS OF OUR FAMILIES</p>
+    <div class="gate-crest" aria-hidden="true">ॐ श्री गणेशाय नमः</div>
+
+    <p class="gate-kicker gate-mantra">
+      वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।
+    </p>
+    <p class="gate-kicker gate-mantra">
+      निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+    </p>
+    <p class="gate-kicker gate-invitation">निमंत्रण</p>
+
     <h2 id="gate-title">CHETAN <span>&amp;</span> SHIWANGI</h2>
+
     <p class="gate-date">29 November — 5 December 2026</p>
-    <button class="gate-open" id="open-invitation" type="button">Open your invitation ✦</button>
-    <button class="gate-skip" id="skip-invitation" type="button">View invitation</button>
+
+    <button class="gate-open" id="open-invitation" type="button">
+      Open your invitation ✦
+    </button>
+    <button class="gate-skip" id="skip-invitation" type="button">
+      View invitation
+    </button>
   </div>
 </div>
 
@@ -100,25 +116,48 @@
 
 
 
+    <section class="gallery-section section-wrap" id="gallery">
+      <div class="section-heading">
+        <p class="eyebrow">A LITTLE GLIMPSE OF US</p>
+        <h2>Our Story</h2>
+        <p>Two hearts, two families, and a lifetime of memories waiting to unfold.</p>
+      </div>
+      <div class="photo-gallery">
+        <button class="gallery-photo" type="button" data-full="shiwangi.webp" aria-label="View Shiwangi's portrait">
+          <img src="shiwangi.webp" alt="Shiwangi, the bride" loading="lazy" decoding="async">
+          <span>Shiwangi · The Bride</span>
+        </button>
+        <button class="gallery-photo" type="button" data-full="chetan.webp" aria-label="View Chetan's portrait">
+          <img src="chetan.webp" alt="Chetan, the groom" loading="lazy" decoding="async">
+          <span>Chetan · The Groom</span>
+        </button>
+      </div>
+      <dialog class="gallery-lightbox" id="gallery-lightbox" aria-label="Couple photograph">
+        <button class="lightbox-close" id="close-lightbox" type="button" aria-label="Close photograph">×</button>
+        <img id="lightbox-image" src="" alt="Couple portrait">
+      </dialog>
+    </section>
+
+    <section class="guestbook-section section-wrap" id="wishes">
+      <div class="guestbook-layout">
+      <div class="section-heading">
+        <p class="eyebrow">LEAVE A NOTE FOR THE COUPLE</p>
+        <h2>Send Your Wishes</h2>
+        <p>Your kind words will be treasured by both families.</p>
+      </div>
       <form id="guestbook-form" class="guestbook-form"><label for="guest-name">Your name</label><input id="guest-name" name="guest_name" type="text" maxlength="60" autocomplete="name" placeholder="Enter your name" required><label for="guest-message">Your message</label><textarea id="guest-message" name="message" rows="4" maxlength="500" placeholder="Write your wishes for the couple..." required></textarea><div class="form-footer"><span id="character-count">0 / 500</span><button type="submit" id="submit-button">Send your wishes <span aria-hidden="true">→</span></button></div><p id="form-status" class="form-status" role="status" aria-live="polite"></p><p class="privacy-note">Messages are reviewed before they appear on this page.</p></form>
       <div class="guest-messages"><div class="messages-heading"><h3>Words from our loved ones</h3><span class="eyebrow">GUESTBOOK</span></div><div id="messages-list" class="messages-list"><p class="empty-state">The first wishes will appear here soon.</p></div></div>
     </div></section>
   </main>
-  <button class="music-toggle" id="music-toggle"
-        type="button" aria-pressed="true">
-  Ⅱ Pause music
-</button>
-
-<audio id="wedding-audio" preload="auto" loop>
-  <source src="./wedding-music.mp3" type="audio/mpeg">
-</audio>
-  <span id="music-status" class="music-status" role="status" aria-live="polite"></span>
-  <button class="share-invitation" id="share-invitation" type="button">↗ Share invitation</button>
-</div>
-<audio id="wedding-audio" preload="none" loop>
-  <source src="wedding-music.mp3" type="audio/mpeg">
-</audio>
-<a class="whatsapp-share" id="whatsapp-share" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Share on WhatsApp ↗</a>
+  <div class="floating-actions">
+    <button class="music-toggle" id="music-toggle" type="button" aria-pressed="false">♫ Play music</button>
+    <span id="music-status" class="music-status" role="status" aria-live="polite"></span>
+    <button class="share-invitation" id="share-invitation" type="button">↗ Share invitation</button>
+  </div>
+  <audio id="wedding-audio" preload="none" loop>
+    <source src="./wedding-music.mp3" type="audio/mpeg">
+  </audio>
+  <a class="whatsapp-share" id="whatsapp-share" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Share on WhatsApp ↗</a>
 
 <footer><div class="footer-mark">C <span>&</span> S</div><p>With love, Chetan &amp; Shiwangi</p><p class="footer-date">29.11.2026 — 05.12.2026</p><p class="footer-mantra">॥ शुभमस्तु ॥</p><a href="#home" class="back-top">Back to top ↑</a></footer>
   <script>
