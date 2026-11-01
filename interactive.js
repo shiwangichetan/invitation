@@ -1,18 +1,11 @@
 
-/* Add this file after the existing script.js.
-   Reuses the existing Supabase client and guestbook. */
-
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ----------------------------------
   // Wedding music and opening envelope
-  // ----------------------------------
-
   const gate = document.getElementById("invite-gate");
   const audio = document.getElementById("wedding-audio");
   const musicButton = document.getElementById("music-toggle");
 
-  // Display Pause music by default.
   if (musicButton) {
     musicButton.textContent = "Ⅱ Pause music";
     musicButton.setAttribute("aria-pressed", "true");
@@ -51,17 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ?.addEventListener("click", openGate);
 
 
-  // ----------------------------------
   // Pause and resume music
-  // ----------------------------------
-
   musicButton?.addEventListener("click", async () => {
     if (!audio) return;
 
     if (audio.paused) {
       try {
         await audio.play();
-
         musicButton.textContent = "Ⅱ Pause music";
         musicButton.setAttribute("aria-pressed", "true");
       } catch (error) {
@@ -69,17 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } else {
       audio.pause();
-
       musicButton.textContent = "♫ Resume music";
       musicButton.setAttribute("aria-pressed", "false");
     }
   });
 
 
-  // ----------------------------------
   // Photo gallery lightbox
-  // ----------------------------------
-
   const dialog = document.getElementById("gallery-lightbox");
   const lightboxImage = document.getElementById("lightbox-image");
 
@@ -105,23 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // ----------------------------------
   // Google Calendar links
-  // ----------------------------------
-
   const months = {
-    january: "01",
-    february: "02",
-    march: "03",
-    april: "04",
-    may: "05",
-    june: "06",
-    july: "07",
-    august: "08",
-    september: "09",
-    october: "10",
-    november: "11",
-    december: "12"
+    january: "01", february: "02", march: "03",
+    april: "04", may: "05", june: "06",
+    july: "07", august: "08", september: "09",
+    october: "10", november: "11", december: "12"
   };
 
   const toDate = (text) => {
@@ -155,7 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ).toISOString().slice(0, 10).replaceAll("-", "");
 
     const link = document.createElement("a");
-
     link.className = "calendar-link";
     link.target = "_blank";
     link.rel = "noopener noreferrer";
@@ -174,10 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // ----------------------------------
   // Invitation sharing
-  // ----------------------------------
-
   const share = () => {
     const info = {
       title: "Chetan & Shiwangi — Wedding Invitation",
