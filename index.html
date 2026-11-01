@@ -104,9 +104,14 @@
       <div class="guest-messages"><div class="messages-heading"><h3>Words from our loved ones</h3><span class="eyebrow">GUESTBOOK</span></div><div id="messages-list" class="messages-list"><p class="empty-state">The first wishes will appear here soon.</p></div></div>
     </div></section>
   </main>
-  <div class="floating-actions">
-  <button class="music-toggle" id="music-toggle" type="button" aria-pressed="true">
-  Ⅱ Pause music </button>
+  <button class="music-toggle" id="music-toggle"
+        type="button" aria-pressed="true">
+  Ⅱ Pause music
+</button>
+
+<audio id="wedding-audio" preload="auto" loop>
+  <source src="./wedding-music.mp3" type="audio/mpeg">
+</audio>
   <span id="music-status" class="music-status" role="status" aria-live="polite"></span>
   <button class="share-invitation" id="share-invitation" type="button">↗ Share invitation</button>
 </div>
