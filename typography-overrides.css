@@ -1,0 +1,40 @@
+/* Refined wedding typography inspired by the supplied invitation reference */
+:root {
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --display: 'Cinzel', Georgia, serif;
+  --slab: 'Cormorant Garamond', Georgia, serif;
+}
+body, p, .venue, .event-date, .invitation-copy, .family-line, .family-address,
+.message-card p, .guestbook-form label, .guestbook-form input, .guestbook-form textarea {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+h1, h2, h3, h4, .wordmark, .footer-mark, .event-card h4, .section-heading h2,
+.wishes-inner h2, .family-card h3, .messages-heading h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+}
+.hero h1 { font-weight: 600; letter-spacing: .015em; }
+.small-intro, .hero-subtitle, .gallery-photo span, .rsvp-panel h3, .portrait-caption strong {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+}
+.small-intro { font-size: clamp(32px, 4vw, 44px); line-height: 1.25; }
+.hero-subtitle { font-size: clamp(38px, 4.5vw, 52px); line-height: 1.25; }
+.event-label, .venue-label, .eyebrow, .side-heading span, .side-tab small,
+.topbar nav a, .date-pill, .primary-link, .text-link, .calendar-link,
+.gate-kicker, .gate-date, .gate-open, .floating-actions button, .footer-date,
+.rsvp-form > label {
+  font-family: 'Cinzel', Georgia, serif;
+}
+.event-card h4, .venue, .event-date, .section-heading h2, .family-card h3 { letter-spacing: 0; }
+.event-card h4, .venue { font-weight: 600; }
+.invitation-copy, .section-heading > p:last-child, .side-heading p, .wishes-intro,
+.family-address, .guestbook-form input, .guestbook-form textarea { font-weight: 500; }
+.invite-gate .gate-envelope h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+}
+@media (max-width: 650px) {
+  .small-intro { font-size: 34px; }
+  .hero-subtitle { font-size: 40px; }
+}

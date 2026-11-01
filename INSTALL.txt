@@ -1,0 +1,13 @@
+Wedding typography update
+
+1. In index.html, find the existing Google Fonts link inside <head> and replace it with the content in google-font-link.txt.
+2. Open style-additions.css and paste all of typography-overrides.css at the very bottom.
+3. Commit both changes to the main branch and allow Cloudflare Worker to deploy.
+4. Hard-refresh the website.
+
+Font roles:
+- Cormorant Garamond: main text, headings, names and event details.
+- Great Vibes: selected decorative phrases only.
+- Cinzel: uppercase labels, navigation and buttons.
+
+The repository was not updated automatically: GitHub rejected the write request with HTTP 403. These files provide the exact manual changes.
