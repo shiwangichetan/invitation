@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   rsvp?.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (typeof supabaseClient === "undefined" || !supabaseClient) {
-      rsvpStatus.textContent = "RSVP is temporarily unavailable. Please contact the family directly.";
+      if (rsvpStatus) rsvpStatus.textContent = "RSVP is temporarily unavailable. Please contact the family directly.";
       return;
     }
     const data = new FormData(rsvp);
@@ -67,23 +67,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const guestCount = Number(data.get("guest_count") || 1);
     const events = data.getAll("events").map(String);
     if (guestName.length < 2 || !["yes","no","maybe"].includes(attendance)) {
-      rsvpStatus.textContent = "Please enter your name and select an attendance response.";
+      if (rsvpStatus) rsvpStatus.textContent = "Please enter your name and select an attendance response.";
       return;
     }
     const submit = document.getElementById("rsvp-submit");
     submit.disabled = true;
-    rsvpStatus.textContent = "Submitting your reply…";
-    const { error } = await supabaseClient.from("wedding_rsvps").insert([{
-      guest_name: guestName, attendance, guest_count: guestCount, events
-    }]);
+    if (rsvpStatus) rsvpStatus.textContent = "Submitting your reply…";
+    let error = null;
+    try {
+      const result = await supabaseClient.from("wedding_rsvps").insert([{
+        guest_name: guestName, attendance, guest_count: guestCount, events
+      }]);
+      error = result.error;
+    } catch (requestError) {
+      error = requestError;
+    }
     submit.disabled = false;
     if (error) {
-      console.error("RSVP submission failed:", error.message);
-      rsvpStatus.textContent = "We couldn't save your RSVP. Please try again later or contact the family.";
+      console.error("RSVP submission failed:", error.message || error);
+      if (rsvpStatus) rsvpStatus.textContent = "We couldn't save your RSVP. Please try again later or contact the family.";
       return;
     }
     rsvp.reset();
-    rsvpStatus.textContent = "Thank you. Your RSVP has been received.";
+    if (rsvpStatus) rsvpStatus.textContent = "Thank you. Your RSVP has been received.";
   });
 
   // Optional music. Add your licensed/owned MP3 as wedding-music.mp3 in the repository root.

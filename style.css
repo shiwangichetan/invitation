@@ -230,3 +230,56 @@ button, .text-link, .primary-link, .side-tab { min-height: 44px; }
 @media (max-width: 360px) {
   .ganesha-artwork { width: min(55vw, 185px); }
 }
+
+
+/* Royal interactive additions */
+.invite-gate{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at center,#7b2937 0%,#3c0712 70%,#21030a 100%);transition:opacity .8s ease,visibility .8s ease}
+.invite-gate:before,.invite-gate:after{content:"";position:absolute;inset:16px;border:1px solid rgba(225,190,121,.55);pointer-events:none}
+.invite-gate:after{inset:24px;border-color:rgba(225,190,121,.2)}
+.invite-gate.is-opening{opacity:0;visibility:hidden}
+.gate-envelope{position:relative;width:min(100%,470px);padding:54px 28px 42px;text-align:center;color:#f9edda;border:1px solid rgba(225,190,121,.65);background:linear-gradient(145deg,rgba(104,24,39,.96),rgba(45,4,13,.98));box-shadow:0 28px 90px #18020880}
+.gate-envelope:before{content:"";position:absolute;inset:9px;border:1px solid rgba(225,190,121,.3);pointer-events:none}
+.gate-crest{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 22px;border:1px solid #d7b36d;border-radius:50%;color:#e9cb8d;font:36px Georgia,serif}
+.gate-kicker{font:11px var(--display);letter-spacing:.2em;color:#e7c991}
+.gate-envelope h2{margin:18px 0 8px;font:italic 42px var(--serif);color:#fff2dc}
+.gate-envelope h2 span{color:#d7b36d}
+.gate-date{font:12px var(--display);letter-spacing:.14em;color:#e7c991}
+.gate-open{display:block;margin:28px auto 0;padding:14px 25px;border:1px solid #e5c27e;background:linear-gradient(110deg,#e8c887,#b88a43);color:#45101b;font:600 12px var(--display);letter-spacing:.1em;cursor:pointer}
+.gate-skip{margin-top:12px;border:0;background:transparent;color:#e9d7bd;text-decoration:underline;text-underline-offset:4px;font-size:12px;cursor:pointer}
+.gallery-section{background:linear-gradient(180deg,#f8efe2,#fffaf3)}
+.photo-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:850px;margin:0 auto}
+.gallery-photo{position:relative;padding:9px 9px 45px;border:1px solid #c9a66c;background:#fffaf2;box-shadow:0 12px 34px #4a1b1718;cursor:zoom-in;transform:rotate(-1deg);transition:transform .25s,box-shadow .25s}
+.gallery-photo:nth-child(2){transform:rotate(1deg)}
+.gallery-photo:hover{transform:translateY(-5px) rotate(0);box-shadow:0 18px 42px #4a1b1728}
+.gallery-photo img{display:block;width:100%;height:390px;object-fit:cover;object-position:center 25%}
+.gallery-photo span{position:absolute;left:10px;right:10px;bottom:12px;color:var(--maroon);font:italic 24px var(--serif)}
+.gallery-lightbox{width:min(92vw,760px);max-width:none;max-height:92vh;padding:12px;border:1px solid #d7b36d;background:#fff8ed;box-shadow:0 25px 80px #21030acc}
+.gallery-lightbox::backdrop{background:#17040bd9;backdrop-filter:blur(5px)}
+.gallery-lightbox img{display:block;max-width:100%;max-height:80vh;margin:auto;object-fit:contain}
+.lightbox-close{position:absolute;top:5px;right:8px;width:38px;height:38px;border:0;border-radius:50%;background:var(--maroon);color:white;font-size:26px;cursor:pointer}
+.rsvp-panel{max-width:700px;margin:0 auto 52px;padding:30px 32px;border-top:1px solid #c8a66f;border-bottom:1px solid #c8a66f;background:linear-gradient(135deg,#fffaf2,#f5e9d8)}
+.rsvp-panel h3{margin:8px 0;font:italic 36px var(--serif);color:var(--maroon)}
+.rsvp-copy{font-size:15px;color:var(--muted)}
+.rsvp-form{display:grid;gap:10px;margin-top:22px;text-align:left}
+.rsvp-form>label{margin-top:8px;color:var(--maroon);font:600 12px var(--display);letter-spacing:.07em}
+.rsvp-form input[type=text],.rsvp-form select{width:100%;min-height:46px;padding:12px;border:1px solid #d8c4a4;background:#fffdf9;color:var(--ink);font:16px var(--slab)}
+.rsvp-options,.rsvp-events{display:flex;flex-wrap:wrap;gap:10px 18px}
+.rsvp-options label,.rsvp-events label{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--ink)}
+.rsvp-options input,.rsvp-events input{accent-color:var(--maroon);width:17px;height:17px}
+.rsvp-form button{justify-self:start;min-height:46px;padding:12px 24px;border:0;background:var(--maroon);color:#fff;font:600 12px var(--display);letter-spacing:.1em;cursor:pointer}
+.rsvp-form button:disabled{opacity:.55;cursor:wait}
+.floating-actions{position:fixed;right:16px;bottom:16px;z-index:20;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.floating-actions button{min-height:42px;padding:10px 15px;border:1px solid #d4b06c;border-radius:30px;background:#4b1727;color:#fff7e9;box-shadow:0 5px 18px #2d081c30;font:11px var(--display);letter-spacing:.04em;cursor:pointer}
+.floating-actions button[aria-pressed=true]{background:#b58a4a;color:#2e1017}
+.calendar-link{display:inline-flex;align-items:center;justify-content:center;min-height:40px;margin:9px 5px 0;padding:9px 13px;border:1px solid #b78c50;color:var(--maroon);background:transparent;text-decoration:none;font:10px var(--display);letter-spacing:.04em}
+.whatsapp-share{display:inline-block;margin-top:10px;color:#e9cb8d;font:11px var(--display);text-decoration:none}
+.event-card{transition:transform .25s ease,background .25s ease}
+.event-card:hover{transform:translateY(-3px);background:rgba(226,201,160,.13)}
+@media(max-width:650px){
+ .gate-envelope{padding:42px 18px 32px}.gate-envelope h2{font-size:34px}.gate-kicker{font-size:9px}
+ .photo-gallery{gap:10px}.gallery-photo{padding:5px 5px 36px}.gallery-photo img{height:230px}.gallery-photo span{font-size:18px;bottom:8px}
+ .rsvp-panel{padding:25px 15px;margin-bottom:36px}.rsvp-panel h3{font-size:30px}.rsvp-options,.rsvp-events{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ .floating-actions{right:10px;bottom:10px}.floating-actions button{font-size:10px;padding:9px 12px}
+}
+@media(prefers-reduced-motion:reduce){.invite-gate{transition:none}.gallery-photo,.event-card{transition:none}}
+
