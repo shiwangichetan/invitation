@@ -20,12 +20,12 @@
 
   <style id="gate-sanskrit-alignment-fix">
     /* Keep the Sanskrit invocation in a clean, centered vertical stack. */
-    .gate-envelope .gate-crest{display:block;width:max-content;max-width:100%;margin:0 auto 2px;text-align:center;line-height:1.25}
-    .gate-envelope .gate-ganesha-title{margin:0 auto 14px;text-align:center;font-family:'Noto Serif Devanagari',serif;font-size:clamp(25px,3.2vw,38px);font-weight:600;line-height:1.45;letter-spacing:0;color:#e8c77f}
+    .gate-envelope .gate-crest{display:flex;align-items:center;justify-content:center;width:clamp(76px,9vw,112px);height:clamp(76px,9vw,112px);box-sizing:border-box;margin:0 auto 10px;border:1.5px solid #d9b66b;border-radius:50%;font-family:'Noto Serif Devanagari',serif;font-size:clamp(32px,4vw,46px);font-weight:600;line-height:1;color:#e8c77f;text-align:center}
+    .gate-envelope .gate-ganesha-title{margin:0 auto 18px;text-align:center;font-family:'Noto Serif Devanagari',serif;font-size:clamp(25px,3.2vw,38px);font-weight:600;line-height:1.45;letter-spacing:0;color:#e8c77f}
     .gate-envelope .gate-mantra-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:100%;margin:0 auto 13px;text-align:center}
     .gate-envelope .gate-mantra{display:block;width:100%;max-width:680px;margin:0 auto;padding:0 10px;text-align:center;font-family:'Noto Serif Devanagari',serif;font-size:clamp(14px,1.55vw,19px);font-weight:500;line-height:1.8;letter-spacing:0;white-space:normal;overflow-wrap:anywhere}
     .gate-envelope .gate-invitation{margin:0 auto 14px;text-align:center;line-height:1.7}
-    @media(max-width:600px){.gate-envelope .gate-ganesha-title{font-size:27px;margin-bottom:11px}.gate-envelope .gate-mantra{font-size:13px;line-height:1.9;padding:0 5px}.gate-envelope .gate-mantra-wrap{gap:2px;margin-bottom:10px}}
+    @media(max-width:600px){.gate-envelope .gate-crest{width:72px;height:72px;font-size:31px;margin-bottom:9px}.gate-envelope .gate-ganesha-title{font-size:25px;margin-bottom:12px}.gate-envelope .gate-mantra{font-size:13px;line-height:1.9;padding:0 5px}.gate-envelope .gate-mantra-wrap{gap:2px;margin-bottom:10px}}
   </style>
   <style id="family-choice-styles">
     .family-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,3vw,28px);max-width:900px;margin:32px auto 38px}
@@ -50,8 +50,8 @@
   <div class="invite-gate" id="invite-gate" role="dialog"
      aria-modal="true" aria-labelledby="gate-title">
   <div class="gate-envelope">
-    <div class="gate-crest" aria-hidden="true">ॐ श्री</div>
-    <p class="gate-ganesha-title">गणेशाय नमः॥</p>
+    <div class="gate-crest" aria-label="ॐ">ॐ</div>
+    <p class="gate-ganesha-title">श्री गणेशाय नमः॥</p>
 
     <div class="gate-mantra-wrap" lang="sa">
       <p class="gate-kicker gate-mantra">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।</p>
