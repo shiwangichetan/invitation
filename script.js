@@ -293,3 +293,29 @@ if (!supabaseClient) {
   updateLoadMoreButton({ visible: false });
   loadLatestWishes();
 }
+
+async function showLessWishes() {
+  if (!messagesList || wishesLoading) return;
+
+  const cards = messagesList.querySelectorAll(".message-card");
+
+  cards.forEach((card, index) => {
+    if (index >= WISHES_PAGE_SIZE) {
+      card.remove();
+    }
+  });
+
+  wishesOffset = Math.min(
+    WISHES_PAGE_SIZE,
+    messagesList.querySelectorAll(".message-card").length
+  );
+
+  wishesExhausted = false;
+
+  updateLoadMoreButton({ visible: true });
+
+  document.getElementById("wishes")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
