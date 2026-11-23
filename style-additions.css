@@ -176,3 +176,47 @@ h1, h2, h3, h4, .wordmark, .footer-mark, .event-card h4, .section-heading h2,
   display: none;
 }
 
+
+/* =========================================
+   GUESTBOOK - LOAD MORE & SEE LESS BUTTONS
+========================================= */
+
+.guest-messages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guest-messages .load-more-wishes,
+.guest-messages .see-less-wishes {
+  display: block;
+  width: fit-content;
+  min-width: 250px;
+  margin: 16px auto 0;
+  padding: 22px 42px;
+
+  background: transparent;
+  color: #38272b;
+  border: 2px solid #38272b;
+  border-radius: 60px;
+
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.guest-messages .load-more-wishes:hover,
+.guest-messages .see-less-wishes:hover {
+  background: #511b2b;
+  color: #fffaf3;
+}
+
+.guest-messages .load-more-wishes[hidden],
+.guest-messages .see-less-wishes[hidden] {
+  display: none;
+}
+
