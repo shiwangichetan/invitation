@@ -150,19 +150,80 @@
 
 
 
+<section class="guestbook-section section-wrap" id="wishes">
+  <div class="guestbook-layout">
 
+    <div class="section-heading">
+      <p class="eyebrow">LEAVE A NOTE FOR THE COUPLE</p>
+      <h2>Send Your Wishes</h2>
+      <p>Your kind words will be treasured by both families.</p>
+    </div>
 
-    <section class="guestbook-section section-wrap" id="wishes">
-      <div class="guestbook-layout">
-      <div class="section-heading">
-        <p class="eyebrow">LEAVE A NOTE FOR THE COUPLE</p>
-        <h2>Send Your Wishes</h2>
-        <p>Your kind words will be treasured by both families.</p>
+    <form id="guestbook-form" class="guestbook-form">
+      <label for="guest-name">Your name</label>
+      <input
+        id="guest-name"
+        name="guest_name"
+        type="text"
+        maxlength="60"
+        autocomplete="name"
+        placeholder="Enter your name"
+        required
+      >
+
+      <label for="guest-message">Your message</label>
+      <textarea
+        id="guest-message"
+        name="message"
+        rows="4"
+        maxlength="500"
+        placeholder="Write your wishes for the couple..."
+        required
+      ></textarea>
+
+      <div class="form-footer">
+        <span id="character-count">0 / 500</span>
+        <button type="submit" id="submit-button">
+          Send your wishes <span aria-hidden="true">→</span>
+        </button>
       </div>
-      <form id="guestbook-form" class="guestbook-form"><label for="guest-name">Your name</label><input id="guest-name" name="guest_name" type="text" maxlength="60" autocomplete="name" placeholder="Enter your name" required><label for="guest-message">Your message</label><textarea id="guest-message" name="message" rows="4" maxlength="500" placeholder="Write your wishes for the couple..." required></textarea><div class="form-footer"><span id="character-count">0 / 500</span><button type="submit" id="submit-button">Send your wishes <span aria-hidden="true">→</span></button></div><p id="form-status" class="form-status" role="status" aria-live="polite"></p><p class="privacy-note"> Select Load more wishes to see earlier messages.</p></form>
-      <div class="guest-messages"><div class="messages-heading"><h3>Words from our loved ones</h3><span class="eyebrow">GUESTBOOK</span></div><div id="messages-list" class="messages-list"><p class="empty-state">The first wishes will appear here soon.</p></div>
-        <button id="load-more-wishes" class="load-more-wishes" type="button" hidden>Load more wishes</button></div>
-    </div></section>
+
+      <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="guest-messages">
+      <div class="messages-heading">
+        <h3>Words from our loved ones</h3>
+        <span class="eyebrow">GUESTBOOK</span>
+      </div>
+
+      <div id="messages-list" class="messages-list">
+        <p class="empty-state">The first wishes will appear here soon.</p>
+      </div>
+
+      <button
+        id="load-more-wishes"
+        class="load-more-wishes"
+        type="button"
+        hidden
+      >
+        Load more wishes
+      </button>
+
+      <button
+        id="see-less-wishes"
+        class="see-less-wishes"
+        type="button"
+        hidden
+      >
+        See less
+      </button>
+    </div>
+
+  </div>
+</section>
+
+    
   </main>
   <div class="floating-actions">
     <button class="music-toggle" id="music-toggle" type="button" aria-pressed="false">♫ Play music</button>
