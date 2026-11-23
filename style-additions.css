@@ -150,3 +150,29 @@ h1, h2, h3, h4, .wordmark, .footer-mark, .event-card h4, .section-heading h2,
   .small-intro { font-size: 34px; }
   .hero-subtitle { font-size: 40px; }
 }
+/* Add to style.css (or style-additions.css) for the guestbook pagination control. */
+.load-more-wishes {
+  display: block;
+  margin: 1.25rem auto 0;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.load-more-wishes:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.load-more-wishes:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.load-more-wishes[hidden] {
+  display: none;
+}
+
