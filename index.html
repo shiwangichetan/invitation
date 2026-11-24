@@ -45,188 +45,256 @@
     @media(max-width:600px){.family-choice-grid{gap:12px;margin:24px auto 30px}.family-choice-card{border-radius:14px}.family-choice-copy{padding:14px 8px 16px;gap:5px}.family-choice-english{font-size:9px;letter-spacing:1.2px}.family-choice-action{font-size:10px;padding:9px 10px;gap:5px}.family-choice-image{aspect-ratio:4/5}}
     @media(prefers-reduced-motion:reduce){.family-choice-card,.family-choice-image img,.side-panel{transition:none;animation:none}}
   </style>
+  <style id="responsive-layout-overrides">
+/* Responsive layout layer: desktop, tablet and mobile */
+:root{--wine:#4b1727;--wine-deep:#2e101b;--wine-light:#651f35;--gold:#c6a15a;--gold-light:#e8c77f;--ivory:#fffaf1;--paper:#f5ede2;--ink:#34252a;--content-width:1180px}
+*,*::before,*::after{box-sizing:border-box}
+html{width:100%;max-width:100%;overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{width:100%;max-width:100%;margin:0;overflow-x:clip}
+img,svg,video,canvas{max-width:100%;height:auto}
+button,input,textarea,select{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{touch-action:manipulation}
+main{width:100%;min-width:0}
+main>section,.section-wrap{width:min(100% - 48px,var(--content-width));margin-inline:auto}
+.section-heading{max-width:760px;margin-inline:auto;text-align:center;padding-inline:12px}
+.section-heading h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.08;margin:.25em 0}
+.section-heading p{line-height:1.65}
 
-  <style id="nimantran-premium-design">
-    /* Opening Nimantran only — the rest of the invitation is untouched. */
-    #invite-gate.nimantran-gate{
-      position:fixed;inset:0;z-index:9999;display:grid;place-items:center;
-      overflow-y:auto;padding:24px 16px;
-      background:
-        radial-gradient(ellipse at 50% 8%,rgba(171,111,68,.18),transparent 36%),
-        radial-gradient(ellipse at 8% 92%,rgba(198,161,90,.12),transparent 30%),
-        linear-gradient(145deg,#210b13 0%,#4b1727 48%,#2e101b 100%);
-      isolation:isolate;
-    }
-    #invite-gate.nimantran-gate:before,#invite-gate.nimantran-gate:after{
-      content:"";position:absolute;inset:12px;border:1px solid rgba(214,178,105,.72);
-      pointer-events:none;z-index:-1;
-    }
-    #invite-gate.nimantran-gate:after{inset:18px;border-color:rgba(214,178,105,.28)}
-    #invite-gate.nimantran-gate .gate-envelope{
-      position:relative;width:min(100%,510px);margin:auto;padding:13px;
-      border:1px solid rgba(224,190,123,.7);border-radius:3px;
-      background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(0,0,0,.08));
-      box-shadow:0 24px 90px rgba(0,0,0,.42);
-      color:#fff7e9;text-align:center;
-    }
-    #invite-gate.nimantran-gate .gate-frame{
-      position:relative;min-height:0;padding:clamp(27px,5vh,48px) clamp(17px,5vw,42px) 30px;
-      border:1px solid rgba(221,184,108,.62);
-      background:
-        radial-gradient(circle at 50% 28%,rgba(130,57,65,.3),transparent 42%),
-        linear-gradient(160deg,#5a1c30 0%,#451525 52%,#35101e 100%);
-      overflow:hidden;
-    }
-    #invite-gate.nimantran-gate .gate-frame:before,#invite-gate.nimantran-gate .gate-frame:after{
-      content:"";position:absolute;width:95px;height:95px;border:1px solid rgba(215,176,100,.3);
-      transform:rotate(45deg);pointer-events:none;
-    }
-    #invite-gate.nimantran-gate .gate-frame:before{top:-72px;left:-72px}
-    #invite-gate.nimantran-gate .gate-frame:after{bottom:-72px;right:-72px}
-    #invite-gate.nimantran-gate .gate-crest{
-      display:grid;place-items:center;width:76px;height:76px;margin:0 auto 11px;
-      border:1.5px solid #d9b66b;border-radius:50%;outline:1px solid rgba(217,182,107,.28);
-      outline-offset:5px;color:#f0d18a;font:600 39px/1 'Noto Serif Devanagari',serif;
-      text-shadow:0 2px 18px rgba(232,199,127,.25);
-    }
-    #invite-gate.nimantran-gate .gate-ganesha-title{
-      margin:0 auto 17px;color:#f0d18a;text-align:center;
-      font:600 clamp(23px,4vw,30px)/1.5 'Noto Serif Devanagari',serif;
-    }
-    #invite-gate.nimantran-gate .gate-divider{
-      display:flex;align-items:center;justify-content:center;gap:12px;
-      width:min(230px,80%);margin:0 auto 15px;color:#d8b36d;font-size:17px;
-    }
-    #invite-gate.nimantran-gate .gate-divider span{height:1px;flex:1;background:linear-gradient(90deg,transparent,#c9a15b)}
-    #invite-gate.nimantran-gate .gate-divider span:last-child{transform:scaleX(-1)}
-    #invite-gate.nimantran-gate .gate-mantra-wrap{
-      display:flex;flex-direction:column;align-items:center;gap:3px;
-      width:100%;margin:0 auto 15px;text-align:center;
-    }
-    #invite-gate.nimantran-gate .gate-mantra{
-      display:block;width:100%;margin:0;padding:0 2px;color:#fff0d9;
-      text-align:center;font:500 clamp(13px,2.1vw,17px)/1.9 'Noto Serif Devanagari',serif;
-      letter-spacing:0;white-space:normal;overflow-wrap:anywhere;
-    }
-    #invite-gate.nimantran-gate .gate-divider-small{width:min(155px,65%);margin-bottom:9px;font-size:13px}
-    #invite-gate.nimantran-gate .gate-invitation{
-      margin:0 auto 12px;color:#e8c77f;text-align:center;
-      font:700 clamp(29px,5vw,39px)/1.35 'Noto Serif Devanagari',serif;
-      letter-spacing:0;
-    }
-    #invite-gate.nimantran-gate #gate-title{
-      margin:0 auto 8px;color:#fff8eb;text-align:center;
-      font:italic 500 clamp(34px,7vw,49px)/1.12 'Cormorant Garamond',serif;
-      letter-spacing:-.7px;
-    }
-    #invite-gate.nimantran-gate #gate-title span{color:#e6c477;font-style:normal;padding:0 4px}
-    #invite-gate.nimantran-gate .gate-blessing{
-      max-width:340px;margin:0 auto 17px;color:rgba(255,245,226,.82);
-      font:400 12px/1.7 'Montserrat',sans-serif;letter-spacing:.15px;
-    }
-    #invite-gate.nimantran-gate .gate-date{
-      display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;
-      margin:0 auto 23px;color:#f1d79e;
-      font:500 clamp(12px,2vw,15px)/1.5 'Cinzel',serif;letter-spacing:.5px;
-    }
-    #invite-gate.nimantran-gate .gate-date span{font-size:9px;color:#c6a15a}
-    #invite-gate.nimantran-gate .gate-open{
-      display:inline-flex;align-items:center;justify-content:center;gap:12px;
-      min-width:205px;padding:13px 24px;border:1px solid #f0d28e;border-radius:999px;
-      background:linear-gradient(135deg,#f0d18a,#c49a4f);color:#3a1420;
-      box-shadow:0 7px 22px rgba(0,0,0,.2);
-      font:700 11px/1.2 'Montserrat',sans-serif;letter-spacing:.8px;text-transform:uppercase;
-      cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,filter .2s ease;
-    }
-    #invite-gate.nimantran-gate .gate-open:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.3);filter:brightness(1.04)}
-    #invite-gate.nimantran-gate .gate-open:focus-visible,#invite-gate.nimantran-gate .gate-skip:focus-visible{outline:2px solid #fff0c8;outline-offset:4px}
-    #invite-gate.nimantran-gate .gate-skip{
-      display:block;margin:13px auto 0;padding:7px 12px;border:0;background:transparent;
-      color:rgba(255,244,224,.78);font:500 10px/1.5 'Montserrat',sans-serif;
-      letter-spacing:1px;text-transform:uppercase;cursor:pointer;
-    }
-    #invite-gate.nimantran-gate .gate-skip:hover{color:#f0d18a}
-    #invite-gate.nimantran-gate .gate-ornament{color:#c9a15b;opacity:.85;letter-spacing:8px;font-size:17px}
-    #invite-gate.nimantran-gate .gate-ornament-top{margin-bottom:16px}
-    #invite-gate.nimantran-gate .gate-ornament-bottom{margin-top:20px;font-size:15px}
-    #invite-gate.nimantran-gate .gate-bell{position:absolute;top:-8px;color:#d9b66b;font-size:24px;z-index:2}
-    #invite-gate.nimantran-gate .gate-bell:after{content:"";position:absolute;top:16px;left:50%;height:38px;border-left:1px solid rgba(217,182,107,.65)}
-    #invite-gate.nimantran-gate .gate-bell-left{left:22px}#invite-gate.nimantran-gate .gate-bell-right{right:22px}
-    #invite-gate.nimantran-gate .gate-lotus{position:absolute;bottom:-14px;color:#d9b66b;font-size:44px;opacity:.78;line-height:1}
-    #invite-gate.nimantran-gate .gate-lotus-left{left:-4px}#invite-gate.nimantran-gate .gate-lotus-right{right:-4px}
-    @media(max-width:480px){
-      #invite-gate.nimantran-gate{padding:18px 12px}
-      #invite-gate.nimantran-gate:before{inset:8px}#invite-gate.nimantran-gate:after{inset:13px}
-      #invite-gate.nimantran-gate .gate-envelope{padding:8px}
-      #invite-gate.nimantran-gate .gate-frame{padding:25px 15px 24px}
-      #invite-gate.nimantran-gate .gate-crest{width:66px;height:66px;font-size:34px}
-      #invite-gate.nimantran-gate .gate-ganesha-title{font-size:23px;margin-bottom:13px}
-      #invite-gate.nimantran-gate .gate-mantra{font-size:12px;line-height:1.85}
-      #invite-gate.nimantran-gate .gate-mantra-wrap{margin-bottom:12px}
-      #invite-gate.nimantran-gate .gate-invitation{font-size:29px;margin-bottom:10px}
-      #invite-gate.nimantran-gate #gate-title{font-size:36px}
-      #invite-gate.nimantran-gate .gate-blessing{font-size:10px;margin-bottom:14px}
-      #invite-gate.nimantran-gate .gate-date{font-size:11px;margin-bottom:19px}
-      #invite-gate.nimantran-gate .gate-open{min-width:190px;padding:12px 18px}
-      #invite-gate.nimantran-gate .gate-ornament-top{margin-bottom:12px}
-      #invite-gate.nimantran-gate .gate-ornament-bottom{margin-top:15px}
-    }
-    @media(max-height:700px){
-      #invite-gate.nimantran-gate{place-items:start center}
-      #invite-gate.nimantran-gate .gate-frame{padding-top:18px;padding-bottom:18px}
-      #invite-gate.nimantran-gate .gate-crest{width:58px;height:58px;font-size:30px;margin-bottom:8px}
-      #invite-gate.nimantran-gate .gate-ganesha-title{margin-bottom:9px;font-size:22px}
-      #invite-gate.nimantran-gate .gate-mantra-wrap{margin-bottom:8px}
-      #invite-gate.nimantran-gate .gate-date{margin-bottom:14px}
-    }
-    @media(prefers-reduced-motion:reduce){
-      #invite-gate.nimantran-gate .gate-open{transition:none}
-      #invite-gate.nimantran-gate .gate-open:hover{transform:none}
-    }
+/* Invitation cover */
+.invite-gate{position:fixed;z-index:10000;inset:0;display:grid;place-items:center;overflow-y:auto;overscroll-behavior:contain;padding:clamp(14px,3vw,36px);background:radial-gradient(ellipse at center,#6b263b 0%,var(--wine) 56%,var(--wine-deep) 100%)}
+.gate-envelope{position:relative;width:min(100%,610px);max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain;padding:clamp(26px,5vw,54px) clamp(18px,6vw,58px);margin:auto;border:1px solid var(--gold);outline:1px solid rgba(232,199,127,.42);outline-offset:6px;border-radius:5px;text-align:center;color:var(--ivory);background:linear-gradient(145deg,rgba(255,255,255,.035),transparent 42%),linear-gradient(160deg,#5a1c31,#3b1423 72%,#2e101b);box-shadow:0 22px 70px rgba(0,0,0,.34)}
+.gate-envelope:before,.gate-envelope:after{content:"✦";position:absolute;color:var(--gold);font-size:clamp(17px,3vw,26px);opacity:.9}
+.gate-envelope:before{top:12px;left:15px}.gate-envelope:after{right:15px;bottom:12px}
+.gate-envelope .gate-crest{width:clamp(68px,9vw,96px);height:clamp(68px,9vw,96px);margin:0 auto 12px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-size:clamp(34px,5vw,48px);line-height:1;color:var(--gold-light)}
+.gate-envelope .gate-ganesha-title{margin:0 0 14px;color:var(--gold-light);font-family:'Noto Serif Devanagari',serif;font-size:clamp(22px,3.4vw,31px);line-height:1.5}
+.gate-envelope .gate-mantra-wrap{display:grid;gap:2px;margin:0 auto 14px}
+.gate-envelope .gate-mantra{margin:0;padding-inline:4px;font-family:'Noto Serif Devanagari',serif;font-size:clamp(13px,1.7vw,17px);line-height:1.9;letter-spacing:0;overflow-wrap:anywhere}
+.gate-envelope .gate-invitation{margin:8px 0 15px;color:var(--gold-light);font-family:'Noto Serif Devanagari',serif;font-size:clamp(29px,4.5vw,42px);line-height:1.35}
+.gate-envelope h2{margin:10px 0 12px;font-family:'Cormorant Garamond',serif;font-size:clamp(31px,5.4vw,48px);font-weight:500;line-height:1.1;color:var(--ivory);overflow-wrap:anywhere}
+.gate-envelope h2 span{color:var(--gold-light)}
+.gate-envelope .gate-date{margin:0 auto 24px;font-family:'Cinzel',serif;font-size:clamp(11px,1.8vw,14px);letter-spacing:.09em;line-height:1.7;color:#f3dfb6}
+.gate-envelope .gate-open{display:inline-flex;align-items:center;justify-content:center;min-height:48px;max-width:100%;padding:12px 25px;border:1px solid var(--gold-light);border-radius:999px;background:linear-gradient(135deg,#f0d28f,#c6a15a);color:#35131f;font-weight:700;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.2);transition:transform .2s ease,filter .2s ease}
+.gate-envelope .gate-open:hover{transform:translateY(-2px);filter:brightness(1.04)}
+.gate-envelope .gate-skip{display:block;margin:12px auto 0;padding:10px 16px;border:0;background:transparent;color:#f6e9d4;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+
+/* Header and main sections */
+.topbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;min-height:68px;padding:10px max(24px,calc((100vw - var(--content-width))/2));background:rgba(59,18,34,.96);backdrop-filter:blur(12px)}
+.wordmark{flex:0 0 auto;text-decoration:none;white-space:nowrap}
+.topbar nav{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:clamp(12px,2.4vw,30px);min-width:0}
+.topbar nav a{display:inline-flex;align-items:center;min-height:42px;color:inherit;text-decoration:none;white-space:nowrap}
+.hero{width:100%;min-height:clamp(430px,68vh,720px);padding:clamp(56px,9vw,120px) 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;isolation:isolate}
+.hero>*:not(.ganesha-artwork){position:relative;z-index:1;max-width:min(100%,850px)}
+.ganesha-artwork{max-width:min(180px,35vw);margin:0 auto 16px}
+.ganesha-artwork img{display:block;width:100%;max-height:150px;object-fit:contain}
+.hero h1{font-size:clamp(2.35rem,7vw,5.7rem);line-height:1.02;overflow-wrap:anywhere;margin:.2em 0}
+.hero-subtitle{max-width:650px;line-height:1.7}
+.date-pill{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;max-width:100%;padding:12px 20px;line-height:1.5}
+.couple-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(170px,.8fr) minmax(0,1fr);align-items:center;gap:clamp(14px,3vw,42px);padding-block:clamp(42px,7vw,82px)}
+.portrait-card{min-width:0;overflow:hidden}
+.portrait-card img{display:block;width:100%;height:clamp(230px,34vw,440px);object-fit:cover;object-position:center 30%}
+.portrait-center{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;min-width:0}
+.families-section,.countdown-section,.events,.guestbook-section{padding-block:clamp(42px,7vw,82px)}
+.family-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,4vw,48px);max-width:1000px;margin:28px auto 0}
+.family-card{min-width:0;overflow-wrap:anywhere}
+.countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,2vw,20px);width:min(100%,760px);margin:24px auto 0}
+.countdown>div{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(12px,2.5vw,24px) 8px;text-align:center}
+.countdown strong{font-size:clamp(1.6rem,4vw,3rem);font-variant-numeric:tabular-nums;line-height:1.1}
+.countdown span{font-size:clamp(.68rem,1.4vw,.9rem)}
+.family-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr));width:min(100%,760px)}
+.family-choice-card{min-width:0;min-height:100%}
+.event-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,24px);width:100%;margin:24px auto 0}
+.event-grid.four-events{grid-template-columns:repeat(4,minmax(0,1fr))}
+.event-card{min-width:0;overflow-wrap:anywhere;padding:clamp(16px,2vw,25px)}
+.event-card h4{font-size:clamp(1.1rem,1.8vw,1.5rem);line-height:1.25;overflow-wrap:anywhere}
+.event-date,.venue,.venue-note{line-height:1.65;overflow-wrap:anywhere}
+.text-link{display:inline-flex;align-items:center;min-height:42px}
+.guestbook-layout{display:grid;grid-template-columns:minmax(180px,.75fr) minmax(280px,1.1fr) minmax(220px,.9fr);align-items:start;gap:clamp(18px,3vw,38px);max-width:1180px;margin-inline:auto}
+.guestbook-layout>*{min-width:0}
+.guestbook-form{display:flex;flex-direction:column;gap:10px;min-width:0;padding:clamp(16px,2.5vw,28px)}
+.guestbook-form input,.guestbook-form textarea{display:block;width:100%;max-width:100%;min-width:0;padding:12px 14px;border-radius:8px}
+.guestbook-form textarea{min-height:120px;resize:vertical}
+.form-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.form-footer button,.load-more-wishes,.see-less-wishes{min-height:44px;max-width:100%;cursor:pointer}
+.messages-list{min-width:0;overflow-wrap:anywhere}
+.floating-actions{position:fixed;z-index:900;right:clamp(12px,2vw,24px);bottom:clamp(12px,2vw,24px);display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px;max-width:calc(100vw - 24px)}
+.floating-actions button,.whatsapp-share{min-height:42px;max-width:100%;padding:10px 14px;border-radius:999px}
+.music-status{max-width:100%;overflow-wrap:anywhere}
+footer{padding:36px 24px;text-align:center}
+footer>*{max-width:100%;overflow-wrap:anywhere}
+
+@media (min-width:1400px){main>section,.section-wrap{width:min(100% - 72px,1280px)}.hero{min-height:720px}}
+@media (max-width:900px){
+ .topbar{padding-inline:22px}.topbar nav{gap:12px}
+ .couple-section{grid-template-columns:minmax(0,1fr) minmax(130px,.7fr) minmax(0,1fr);gap:14px}
+ .event-grid,.event-grid.four-events{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .guestbook-layout{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .guestbook-layout>.section-heading{grid-column:1/-1}
+ .guest-messages{grid-column:1/-1}
+}
+@media (max-width:600px){
+ html{scroll-padding-top:110px}
+ main>section,.section-wrap{width:calc(100% - 28px)}
+ .topbar{position:sticky;min-height:unset;display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 12px 10px}
+ .topbar nav{width:100%;justify-content:center;gap:clamp(8px,3vw,18px);overflow-x:auto;flex-wrap:nowrap;padding:0 2px;scrollbar-width:none}
+ .topbar nav::-webkit-scrollbar{display:none}
+ .topbar nav a{min-height:38px;font-size:clamp(10px,2.8vw,12px)}
+ .hero{min-height:560px;min-height:min(690px,82svh);padding:56px 18px}
+ .ganesha-artwork{max-width:120px;margin-bottom:12px}
+ .ganesha-artwork img{max-height:110px}
+ .hero h1{font-size:clamp(2.2rem,11vw,3.6rem)}
+ .hero-blessing{font-size:10px;letter-spacing:.12em}
+ .small-intro,.hero-subtitle{font-size:14px;line-height:1.65}
+ .date-pill{gap:6px;padding:10px 12px;font-size:10px;letter-spacing:.04em}
+ .couple-section{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-block:38px}
+ .portrait-card img{height:clamp(190px,58vw,310px);border-radius:12px}
+ .portrait-center{grid-column:1/-1;grid-row:1;gap:4px;padding:0 8px 8px}
+ .bride-portrait{grid-column:1;grid-row:2}.groom-portrait{grid-column:2;grid-row:2}
+ .portrait-caption{font-size:clamp(11px,3vw,14px);line-height:1.45}
+ .section-heading{padding-inline:4px}
+ .section-heading h2{font-size:clamp(1.8rem,8vw,2.5rem)}
+ .section-heading>p:last-child{font-size:14px}
+ .families-section,.countdown-section,.events,.guestbook-section{padding-block:38px}
+ .family-grid{grid-template-columns:1fr;gap:14px;margin-top:20px}
+ .family-card{padding:18px 14px;text-align:center}
+ .family-address{overflow-wrap:anywhere}
+ .countdown{gap:6px;margin-top:18px}
+ .countdown>div{padding:12px 4px;border-radius:10px}
+ .countdown strong{font-size:clamp(1.35rem,7vw,2rem)}
+ .countdown span{font-size:10px}
+ .family-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:20px auto 24px}
+ .family-choice-image{aspect-ratio:4/4.4}
+ .family-choice-copy{padding:12px 7px 14px}
+ .family-choice-hindi{font-size:clamp(18px,5vw,23px)}
+ .family-choice-english{font-size:8px;letter-spacing:.8px}
+ .family-choice-action{font-size:9px;padding:8px 9px}
+ .side-heading{text-align:center;padding-inline:8px}
+ .event-grid,.event-grid.four-events{grid-template-columns:1fr;gap:12px;margin-top:18px}
+ .event-card{padding:20px 17px;text-align:center}
+ .event-card h4{font-size:1.35rem}
+ .event-number{display:inline-flex;align-items:center;justify-content:center}
+ .text-link{justify-content:center}
+ .venue-note{text-align:center;font-size:13px}
+ .guestbook-layout{grid-template-columns:minmax(0,1fr);gap:20px}
+ .guestbook-layout>.section-heading,.guest-messages{grid-column:auto}
+ .guestbook-form{padding:17px 14px}
+ .guestbook-form input,.guestbook-form textarea{font-size:16px}
+ .form-footer{align-items:stretch}
+ .form-footer button{width:100%}
+ .messages-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+ .floating-actions{right:10px;bottom:10px;left:10px;justify-content:center;gap:7px;max-width:none}
+ .floating-actions button,.whatsapp-share{min-height:42px;padding:9px 12px;font-size:11px}
+ footer{padding:30px 18px 90px}
+ .gate-envelope{width:min(100%,440px);padding:26px 17px 24px;max-height:calc(100dvh - 24px)}
+ .gate-envelope .gate-crest{width:64px;height:64px;font-size:32px;margin-bottom:9px}
+ .gate-envelope .gate-ganesha-title{font-size:22px;margin-bottom:10px}
+ .gate-envelope .gate-mantra{font-size:12px;line-height:1.8}
+ .gate-envelope .gate-mantra-wrap{margin-bottom:8px}
+ .gate-envelope .gate-invitation{font-size:29px;margin:6px 0 12px}
+ .gate-envelope h2{font-size:clamp(29px,9vw,38px);margin:8px 0}
+ .gate-envelope .gate-date{font-size:10px;margin-bottom:18px;letter-spacing:.06em}
+ .gate-envelope .gate-open{width:100%;min-height:48px;padding:12px 14px;font-size:13px}
+ .gate-envelope .gate-skip{min-height:42px}
+}
+@media (max-width:360px){
+ main>section,.section-wrap{width:calc(100% - 22px)}
+ .topbar nav{gap:9px}.topbar nav a{font-size:10px}
+ .family-choice-grid{gap:8px}.family-choice-action{letter-spacing:0}
+ .date-pill{font-size:9px}
+ .floating-actions button{font-size:10px;padding-inline:9px}
+ .gate-envelope{padding-inline:13px}
+}
+@media (min-width:601px) and (max-width:1100px){
+ .guestbook-layout{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .guestbook-layout>.section-heading{grid-column:1/-1}
+ .guest-messages{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
   </style>
 
+  <style id="guestbook-pagination-refinement">
+    /* Compact, balanced pagination controls for the guestbook. */
+    #load-more-wishes.load-more-wishes,
+    #see-less-wishes.see-less-wishes {
+      display: block;
+      width: fit-content;
+      min-width: 0;
+      max-width: min(100%, 260px);
+      min-height: 44px;
+      height: auto;
+      margin: 22px auto 0;
+      padding: 11px 24px;
+      border: 1.5px solid #6a4b4d;
+      border-radius: 999px;
+      background: transparent;
+      color: #4b3034;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: .15px;
+      text-align: center;
+      white-space: normal;
+      box-shadow: none;
+      cursor: pointer;
+      transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    #load-more-wishes.load-more-wishes:hover,
+    #see-less-wishes.see-less-wishes:hover {
+      background: #4b1727;
+      border-color: #4b1727;
+      color: #fffaf1;
+      transform: translateY(-1px);
+    }
+    #load-more-wishes.load-more-wishes:focus-visible,
+    #see-less-wishes.see-less-wishes:focus-visible {
+      outline: 3px solid rgba(198, 161, 90, .55);
+      outline-offset: 3px;
+    }
+    #load-more-wishes[hidden],
+    #see-less-wishes[hidden] { display: none !important; }
+    @media (max-width: 600px) {
+      #load-more-wishes.load-more-wishes,
+      #see-less-wishes.see-less-wishes {
+        max-width: calc(100% - 24px);
+        min-height: 42px;
+        margin-top: 18px;
+        padding: 10px 20px;
+        font-size: 13px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #load-more-wishes.load-more-wishes,
+      #see-less-wishes.see-less-wishes { transition: none; }
+    }
+  </style>
 </head>
 <body>
-  <div class="invite-gate nimantran-gate" id="invite-gate" role="dialog"
-       aria-modal="true" aria-labelledby="gate-title">
-    <div class="gate-envelope">
-      <span class="gate-bell gate-bell-left" aria-hidden="true">✧</span>
-      <span class="gate-bell gate-bell-right" aria-hidden="true">✧</span>
+  <div class="invite-gate" id="invite-gate" role="dialog"
+     aria-modal="true" aria-labelledby="gate-title">
+  <div class="gate-envelope">
+    <div class="gate-crest" aria-label="ॐ">ॐ</div>
+    <p class="gate-ganesha-title">श्री गणेशाय नमः॥</p>
 
-      <div class="gate-frame">
-        <div class="gate-ornament gate-ornament-top" aria-hidden="true">❧ ❖ ❧</div>
-
-        <div class="gate-crest" aria-label="ॐ" lang="sa">ॐ</div>
-        <p class="gate-ganesha-title" lang="sa">श्री गणेशाय नमः॥</p>
-
-        <div class="gate-divider" aria-hidden="true"><span></span>✦<span></span></div>
-
-        <div class="gate-mantra-wrap" lang="sa">
-          <p class="gate-kicker gate-mantra">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।</p>
-          <p class="gate-kicker gate-mantra">निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥</p>
-        </div>
-
-        <div class="gate-divider gate-divider-small" aria-hidden="true"><span></span>❖<span></span></div>
-        <p class="gate-kicker gate-invitation">निमंत्रण</p>
-
-        <h2 id="gate-title">Chetan <span>&amp;</span> Shiwangi</h2>
-        <p class="gate-blessing">Together with our families, we invite you to celebrate our wedding.</p>
-
-        <p class="gate-date"><span aria-hidden="true">✦</span> 29 November — 5 December 2026 <span aria-hidden="true">✦</span></p>
-
-        <button class="gate-open" id="open-invitation" type="button">
-          <span aria-hidden="true">✉</span> Open Invitation <span aria-hidden="true">→</span>
-        </button>
-        <button class="gate-skip" id="skip-invitation" type="button">
-          View invitation
-        </button>
-
-        <div class="gate-ornament gate-ornament-bottom" aria-hidden="true">❧ ❖ ❧</div>
-      </div>
-      <span class="gate-lotus gate-lotus-left" aria-hidden="true">❀</span>
-      <span class="gate-lotus gate-lotus-right" aria-hidden="true">❀</span>
+    <div class="gate-mantra-wrap" lang="sa">
+      <p class="gate-kicker gate-mantra">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।</p>
+      <p class="gate-kicker gate-mantra">निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥</p>
     </div>
+    <p class="gate-kicker gate-invitation">निमंत्रण</p>
+
+    <h2 id="gate-title">Chetan <span>&amp;</span> Shiwangi</h2>
+
+    <p class="gate-date">29 November — 5 December 2026</p>
+
+    <button class="gate-open" id="open-invitation" type="button">
+      Open your invitation ✦
+    </button>
+    <button class="gate-skip" id="skip-invitation" type="button">
+      View invitation
+    </button>
   </div>
+</div>
 
   <div class="petal-layer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <header class="topbar">
